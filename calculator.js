@@ -70,7 +70,7 @@ function calculate_odds(plus_dice, minus_dice) {
 
   // apply divisor at end to reduce floating point math
   for (const [score, prob] of Object.entries(odds)) {
-    odds[score] = prob / Math.pow(HIGH_FACE, num_dice);
+    odds[score] = (prob / Math.pow(HIGH_FACE, num_dice)).toFixed(3);
   }
 
   return odds;
