@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trench Calculator</title>
+  <link type="text/css" rel="stylesheet" href="trench.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+	<!-- Load script dependencies -->
+	<script src="calculator.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <p>
+    Welcome, pilgrim. Calculate your odds below.
+  </p>
+
+  <table id="input">
+    <tr>
+      <td><b>+DICE</b></td>
+      <td>
+        <input type="number" id="plus_dice" value="0" min="0" max="9" style="width:40px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td><b>-DICE</b></td>
+      <td>
+        <input type="number" id="minus_dice" value="0" min="0" max="9" style="width:40px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Modifier</b></td>
+      <td>
+        <input type="number" id="modifier" value="0" min="-12" max="12" style="width:40px;"/>
+      </td>
+    </tr>
+  </table>
+
+  <div>
+    <button type="button" id="calculate_button"><b>CALCULATE</b></button>
+  </div>
+  <br>
+  <div id=input_alert></div>
+  <br>
+  <div id="output">
+    <b>Action</b>
+    <div id="action"></div>
+    <br>
+    <b>Injury</b>
+    <div id="injury"></div>
+    <br>
+    <b>Individual Scores</b>
+    <div id="scores"></div>
+  </div>
+
+</body>
+
+<script src="app.js"></script>
+</html>
