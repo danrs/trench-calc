@@ -124,13 +124,13 @@ function injury_odds(odds) {
   };
   injury_odds['No Effect'] = odds[1];
   for (let i = 2; i <= 6; i++) {
-    injury_odds['Minor Hit'] += odds[i];
+    injury_odds['Minor Hit'] += parseInt(odds[i]);
   }
   for (let i = 7; i <= 8; i++) {
-    injury_odds['Down'] += odds[i];
+    injury_odds['Down'] += parseInt(odds[i]);
   }
   for (let i = 9; i <= 12; i++) {
-    injury_odds['Out of Action'] += odds[i];
+    injury_odds['Out of Action'] += parseInt(odds[i]);
   }
   return injury_odds;
 }
