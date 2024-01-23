@@ -1,5 +1,5 @@
 function asPercent(dec) {
-	return dec.toFixed(2) * parseInt(100, 10) + '%';
+	return (dec * 100).toFixed(0) + '%';
 }
 
 function update() {
@@ -15,14 +15,17 @@ function update() {
   document.getElementById("action_crit").innerText = asPercent(action['Critical Success']);
 
   let injury = injury_odds(modified_odds);
-  document.getElementById("injury_no_effect").innerText = asPercent(action['No Effect']);
-  document.getElementById("injury_minor").innerText = asPercent(action['Minor Hit']);
-  document.getElementById("injury_down").innerText = asPercent(action['Down']);
-  document.getElementById("injury_ooa").innerText = asPercent(action['Out of Action']);
+  document.getElementById("injury_no_effect").innerText = asPercent(injury['No Effect']);
+  document.getElementById("injury_minor").innerText = asPercent(injury['Minor Hit']);
+  document.getElementById("injury_down").innerText = asPercent(injury['Down']);
+  document.getElementById("injury_ooa").innerText = asPercent(injury['Out of Action']);
 
   for (let row of document.getElementById("score_table").rows) {
-    let prob = modified_odds[row.cells[0].innerText];
-    row.cells[1].innerText = asPercent(prob);
+    let row_num = row.cells[0].innerText;
+    if (row_num != "Score") {
+      let prob = modified_odds[row.cells[0].innerText];
+      row.cells[1].innerText = asPercent(prob);
+    }
   }
 
 }

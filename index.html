@@ -1,131 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Trench Calculator</title>
-  <link type="text/css" rel="stylesheet" href="trench.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <head>
+    <meta charset="UTF-8">
+    <title>Trench Calculator</title>
+    <link type="text/css" rel="stylesheet" href="trench.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Load script dependencies -->
-	<script src="calculator.js" charset="utf-8"></script>
-</head>
+    <!-- Load script dependencies -->
+    <script src="calculator.js" charset="utf-8"></script>
+  </head>
 
-<body>
-  <h1>Trench Calculator</h1>
-  <p>
-    Welcome, pilgrim. Calculate your odds below.
-  </p>
+  <body>
+    <h1>Trench Calculator</h1>
+    <div>
+      <p>
+        Welcome, pilgrim. Calculate your odds below.
+      </p>
+    </div>
 
-  <table id="input">
-    <tr>
-      <td><b>+DICE</b></td>
-      <td>
-        <input type="number" id="plus_dice" value="0" min="0" max="9" style="width:40px;"/>
-      </td>
-    </tr>
-    <tr>
-      <td><b>-DICE</b></td>
-      <td>
-        <input type="number" id="minus_dice" value="0" min="0" max="9" style="width:40px;"/>
-      </td>
-    </tr>
-    <tr>
-      <td><b>Modifier</b></td>
-      <td>
-        <input type="number" id="modifier" value="0" min="-12" max="12" style="width:40px;"/>
-      </td>
-    </tr>
-  </table>
-  <br>
-
-  <div>
-    <button type="button" id="calculate_button"><b>CALCULATE</b></button>
-  </div>
-  <br>
-  <div id=input_alert></div>
-  <br>
-  <div id="output">
-    <h2>Action Success Chart</h2>
-    <div id="action">
-      <table id = "action_table">
+    <div>
+      <table id="input">
         <tr>
-          <th>Score</th>
-          <th>Outcome</th>
-          <th>Probability</th>
+          <td><b>+DICE</b></td>
+          <td>
+            <input type="number" id="plus_dice" value="0" min="0" max="9" style="width:40px;"/>
+          </td>
         </tr>
         <tr>
-          <td>1-6</td>
-          <td>Failure</td>
-          <td id='action_fail'>0%</td>
+          <td><b>-DICE</b></td>
+          <td>
+            <input type="number" id="minus_dice" value="0" min="0" max="9" style="width:40px;"/>
+          </td>
         </tr>
         <tr>
-          <td>7-11</td>
-          <td>Success</td>
-          <td id='action_success'>0%</td>
-        </tr>
-        <tr>
-          <td>12</td>
-          <td>Critical Success</td>
-          <td id='action_crit'>0%</td>
+          <td><b>Modifier</b></td>
+          <td>
+            <input type="number" id="modifier" value="0" min="-12" max="12" style="width:40px;"/>
+          </td>
         </tr>
       </table>
     </div>
-    <br>
-    <h2>Injury Chart</h2>
-    <div id="injury">
-      <table id="injury_table">
-        <tr>
-          <th>Score</th>
-          <th>Outcome</th>
-          <th>Probability</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>No Effect</td>
-          <td id='injury_no_effect'>0%</td>
-        </tr>
-        <tr>
-          <td>2-6</td>
-          <td>Minor Hit</td>
-          <td id='injury_minor'>0%</td>
-        </tr>
-        <tr>
-          <td>7-8</td>
-          <td>Down</td>
-          <td id='injury_down'>0%</td>
-        </tr>
-        <tr>
-          <td>9-12</td>
-          <td>Out of Action</td>
-          <td id='injury_ooa'>0%</td>
-        </tr>
-      </table>
-    </div>
-    <br>
-    <h2>Individual Score Chart</h2>
-    <div id="scores">
-      <table id="score_table">
-        <tr>
-          <th>Score</th>
-          <th>Probability</th>
-        </tr>
-        <tr><td>1</td><td>0%</td></tr>
-        <tr><td>2</td><td>0%</td></tr>
-        <tr><td>3</td><td>0%</td></tr>
-        <tr><td>4</td><td>0%</td></tr>
-        <tr><td>5</td><td>0%</td></tr>
-        <tr><td>6</td><td>0%</td></tr>
-        <tr><td>7</td><td>0%</td></tr>
-        <tr><td>8</td><td>0%</td></tr>
-        <tr><td>9</td><td>0%</td></tr>
-        <tr><td>10</td><td>0%</td></tr>
-        <tr><td>11</td><td>0%</td></tr>
-        <tr><td>12</td><td>0%</td></tr>
-      </table>
-    </div>
-  </div>
 
-</body>
+    <div>
+      <button type="button" id="calculate_button"><b>CALCULATE</b></button>
+    </div>
+    <div id=input_alert></div>
+    <div id="output">
+      <h2>Action Success Chart</h2>
+      <div id="action">
+        <table id = "action_table">
+          <tr>
+            <th>Score</th>
+            <th>Outcome</th>
+            <th>Probability</th>
+          </tr>
+          <tr>
+            <td>1-6</td>
+            <td>Failure</td>
+            <td id='action_fail'>0%</td>
+          </tr>
+          <tr>
+            <td>7-11</td>
+            <td>Success</td>
+            <td id='action_success'>0%</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Critical Success</td>
+            <td id='action_crit'>0%</td>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <h2>Injury Chart</h2>
+      <div id="injury">
+        <table id="injury_table">
+          <tr>
+            <th>Score</th>
+            <th>Outcome</th>
+            <th>Probability</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>No Effect</td>
+            <td id='injury_no_effect'>0%</td>
+          </tr>
+          <tr>
+            <td>2-6</td>
+            <td>Minor Hit</td>
+            <td id='injury_minor'>0%</td>
+          </tr>
+          <tr>
+            <td>7-8</td>
+            <td>Down</td>
+            <td id='injury_down'>0%</td>
+          </tr>
+          <tr>
+            <td>9-12</td>
+            <td>Out of Action</td>
+            <td id='injury_ooa'>0%</td>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <h2>Individual Score Chart</h2>
+      <div id="scores">
+        <table id="score_table">
+          <tr>
+            <th>Score</th>
+            <th>Probability</th>
+          </tr>
+          <tr><td>1</td><td>0%</td></tr>
+          <tr><td>2</td><td>0%</td></tr>
+          <tr><td>3</td><td>0%</td></tr>
+          <tr><td>4</td><td>0%</td></tr>
+          <tr><td>5</td><td>0%</td></tr>
+          <tr><td>6</td><td>0%</td></tr>
+          <tr><td>7</td><td>0%</td></tr>
+          <tr><td>8</td><td>0%</td></tr>
+          <tr><td>9</td><td>0%</td></tr>
+          <tr><td>10</td><td>0%</td></tr>
+          <tr><td>11</td><td>0%</td></tr>
+          <tr><td>12</td><td>0%</td></tr>
+        </table>
+      </div>
+    </div>
 
-<script src="app.js"></script>
+  </body>
+
+  <script src="app.js"></script>
 </html>

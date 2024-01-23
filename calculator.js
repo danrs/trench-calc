@@ -41,7 +41,7 @@ function calc_sum_2(results, faces, die_index, sum_highest=true) {
   if(faces[die_index] < HIGH_FACE) {
     let next_faces = [...faces];
     next_faces[die_index] += 1;
-    calc_sum_2(results, next_faces, die_index, sum_highest);  
+    calc_sum_2(results, next_faces, die_index, sum_highest);
   }
 
   return results;
@@ -53,11 +53,11 @@ function calculate_odds(plus_dice, minus_dice) {
   }
   let results = {
     1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0,
-    7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 
+    7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0,
   };
   let num_dice = 2 + Math.abs(parseInt(plus_dice, 10) - parseInt(minus_dice, 10));
   if (num_dice > 8) {
-    let alert_text = "Error: total number of dice (${num_dice}) must not exceed 8."
+    let alert_text = "Error: total number of dice (" + num_dice + ") must not exceed 8."
     document.getElementById("input_alert").innerText = alert_text;
     throw new Error(alert_text);
   } else {
@@ -89,7 +89,7 @@ function modify(odds, modifier=0) {
 
   let modified_odds = {
     1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0,
-    7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 
+    7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0,
   };
   for (const [score, prob] of Object.entries(odds)) {
     let modified_score = parseInt(score,10)+parseInt(modifier, 10);
