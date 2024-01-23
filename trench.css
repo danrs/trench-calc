@@ -1,4 +1,4 @@
-body { 
+body {
   background-color:#FBFAE7;
   background-image:
     radial-gradient(rgba(190,200,10,.69), rgba(140,145,120,.1) 2px, transparent 40px),
@@ -11,4 +11,8 @@ body {
 * {
   font-family: monospace;
 }
-
+table, th, td {
+  border: 2px solid #cc0022;
+  text-align: center;
+  border-collapse: collapse;
+}

@@ -6,7 +6,8 @@ function update() {
   let modified_odds = modify(odds, modifier);
 
   let str = JSON.stringify(action_odds(modified_odds), null, 4);
-  document.getElementById("action").innerText = str;
+  document.getElementById("action_fail").innerText = modified_odds['Failure'];
+
   str = JSON.stringify(injury_odds(modified_odds), null, 4);
   document.getElementById("injury").innerText = str;
   str = JSON.stringify(modified_odds, null, 4);

@@ -43,14 +43,65 @@
   <div id=input_alert></div>
   <br>
   <div id="output">
-    <b>Action</b>
-    <div id="action"></div>
+    <h2>Action Success Chart</h2>
+    <div id="action">
+      <table>
+        <tr>
+          <th>Score</th>
+          <th>Outcome</th>
+          <th>Probability</th>
+        </tr>
+        <tr>
+          <td>1-6</td>
+          <td>Failure</td>
+          <td id='action_fail'>0%</td>
+        </tr>
+        <tr>
+          <td>7-11</td>
+          <td>Success</td>
+          <td id='action_success'>0%</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Critical Success</td>
+          <td id='action_crit'>0%</td>
+        </tr>
+      </table>
+    </div>
     <br>
-    <b>Injury</b>
-    <div id="injury"></div>
+    <h2>Injury Chart</h2>
+    <div id="injury">
+      <table>
+        <tr>
+          <th>Score</th>
+          <th>Outcome</th>
+          <th>Probability</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>No Effect</td>
+          <td id='injury_no_effect'>0%</td>
+        </tr>
+        <tr>
+          <td>2-6</td>
+          <td>Minor Hit</td>
+          <td id='injury_minor'>0%</td>
+        </tr>
+        <tr>
+          <td>7-8</td>
+          <td>Down</td>
+          <td id='injury_down'>0%</td>
+        </tr>
+        <tr>
+          <td>9-12</td>
+          <td>Out of Action</td>
+          <td id='injury_ooa'>0%</td>
+        </tr>
+      </table>
+    </div>
     <br>
-    <b>Individual Scores</b>
-    <div id="scores"></div>
+    <h2>Individual Score Chart</h2>
+    <div id="scores">TODO</div>
   </div>
 
 </body>
