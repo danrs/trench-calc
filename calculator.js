@@ -92,9 +92,9 @@ function modify(odds, modifier=0) {
     7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0,
   };
   for (const [score, prob] of Object.entries(odds)) {
-    let modified_score = parseFloat(score,10)+parseFloat(modifier, 10);
+    let modified_score = parseFloat(score)+parseFloat(modifier);
     modified_score = Math.min(Math.max(modified_score, 1), 12);
-    modified_odds[modified_score] += prob;
+    modified_odds[modified_score] += parseFloat(prob);
   }
   return modified_odds;
 }
