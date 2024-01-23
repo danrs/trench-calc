@@ -5,8 +5,8 @@ function update() {
   let odds = calculate_odds(plus_dice,minus_dice);
   let modified_odds = modify(odds, modifier);
 
-  let str = JSON.stringify(action_odds(modified_odds), null, 4);
-  document.getElementById("action_fail").innerText = modified_odds['Failure'];
+  let action = action_odds(modified_odds);
+  document.getElementById("action_fail").innerText = action['Failure'];
 
   str = JSON.stringify(injury_odds(modified_odds), null, 4);
   document.getElementById("injury").innerText = str;
