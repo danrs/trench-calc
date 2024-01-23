@@ -106,12 +106,12 @@ function action_odds(odds) {
     'Critical Success': 0,
   };
   for (let i = 1; i <= 6; i++) {
-    action_odds['Failure'] += odds[i];
+    action_odds['Failure'] += parseFloat(odds[i]);
   }
   for (let i = 7; i <= 11; i++) {
-    action_odds['Success'] += odds[i];
+    action_odds['Success'] += parseFloat(odds[i]);
   }
-	action_odds['Critical Success'] = odds[12];
+	action_odds['Critical Success'] = parseFloat(odds[12]);
   return action_odds;
 }
 
@@ -124,17 +124,14 @@ function injury_odds(odds) {
   };
   injury_odds['No Effect'] = odds[1];
   for (let i = 2; i <= 6; i++) {
-    injury_odds['Minor Hit'] += parseInt(odds[i]);
+    injury_odds['Minor Hit'] += parseFloat(odds[i]);
   }
   for (let i = 7; i <= 8; i++) {
-    injury_odds['Down'] += parseInt(odds[i]);
+    injury_odds['Down'] += parseFloat(odds[i]);
   }
   for (let i = 9; i <= 12; i++) {
-    injury_odds['Out of Action'] += parseInt(odds[i]);
+    injury_odds['Out of Action'] += parseFloat(odds[i]);
   }
   return injury_odds;
 }
 
-function asPercent(dec) {
-	return dec.toFixed(2) * parseInt(100, 10) + '%';
-}

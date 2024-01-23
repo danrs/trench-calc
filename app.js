@@ -1,3 +1,7 @@
+function asPercent(dec) {
+	return dec.toFixed(2) * parseInt(100, 10) + '%';
+}
+
 function update() {
   let plus_dice = document.getElementById("plus_dice").value;
   let minus_dice = document.getElementById("minus_dice").value;
@@ -16,10 +20,11 @@ function update() {
   document.getElementById("injury_down").innerText = asPercent(action['Down']);
   document.getElementById("injury_ooa").innerText = asPercent(action['Out of Action']);
 
-  str = JSON.stringify(injury_odds(modified_odds), null, 4);
-  document.getElementById("injury").innerText = str;
-  str = JSON.stringify(modified_odds, null, 4);
-  document.getElementById("scores").innerText = str;
+  for (let row of document.getElementById("score_table").rows) {
+    let prob = modified_odds[row.cells[0].innerText];
+    row.cells[1].innerText = asPercent(prob);
+  }
+
 }
 
 document.addEventListener("DOMContentLoaded", update, false);
