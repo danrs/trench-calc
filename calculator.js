@@ -134,3 +134,7 @@ function injury_odds(odds) {
   }
   return injury_odds;
 }
+
+function asPercent(dec) {
+	return dec.toFixed(2) * parseInt(100, 10) + '%';
+}

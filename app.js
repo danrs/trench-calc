@@ -6,7 +6,15 @@ function update() {
   let modified_odds = modify(odds, modifier);
 
   let action = action_odds(modified_odds);
-  document.getElementById("action_fail").innerText = action['Failure'];
+  document.getElementById("action_fail").innerText = asPercent(action['Failure']);
+  document.getElementById("action_success").innerText = asPercent(action['Success']);
+  document.getElementById("action_crit").innerText = asPercent(action['Critical Success']);
+
+  let injury = injury_odds(modified_odds);
+  document.getElementById("injury_no_effect").innerText = asPercent(action['No Effect']);
+  document.getElementById("injury_minor").innerText = asPercent(action['Minor Hit']);
+  document.getElementById("injury_down").innerText = asPercent(action['Down']);
+  document.getElementById("injury_ooa").innerText = asPercent(action['Out of Action']);
 
   str = JSON.stringify(injury_odds(modified_odds), null, 4);
   document.getElementById("injury").innerText = str;
