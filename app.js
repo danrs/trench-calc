@@ -2,6 +2,14 @@ function asPercent(dec) {
 	return (dec * 100).toFixed(0) + '%';
 }
 
+function increment(field, max=9) {
+	field.value = Math.min(max, parseInt(field.value) + 1);
+}
+
+function decrement(field, min=-9) {
+	field.value = Math.max(min, parseInt(field.value) - 1);
+}
+
 function update() {
   let plus_dice = document.getElementById("plus_dice").value;
   let minus_dice = document.getElementById("minus_dice").value;
@@ -33,3 +41,24 @@ function update() {
 document.addEventListener("DOMContentLoaded", update, false);
 var calculate_button = document.getElementById('calculate_button');
 calculate_button.addEventListener("click", update, false);
+
+document.getElementById('dec_plus_dice_button').addEventListener("click", function() {
+  decrement(document.getElementById("plus_dice"));
+}, false);
+document.getElementById('inc_plus_dice_button').addEventListener("click", function() {
+  increment(document.getElementById("plus_dice"));
+}, false);
+
+document.getElementById('dec_minus_dice_button').addEventListener("click", function() {
+  decrement(document.getElementById("minus_dice"));
+}, false);
+document.getElementById('inc_minus_dice_button').addEventListener("click", function() {
+  increment(document.getElementById("minus_dice"));
+}, false);
+
+document.getElementById('dec_modifier_button').addEventListener("click", function() {
+  decrement(document.getElementById("modifier"), -12);
+}, false);
+document.getElementById('inc_modifier_button').addEventListener("click", function() {
+  increment(document.getElementById("modifier"), 12);
+}, false);

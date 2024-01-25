@@ -41,3 +41,8 @@ table, th, td {
 th{
     font-weight: bold;
 }
+
+input {
+  text-align: center;
+  width: 50px;
+}
